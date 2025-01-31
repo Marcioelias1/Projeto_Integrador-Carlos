@@ -38,7 +38,7 @@ public class APP {
 
         TipoPassagem tipoPassagem = new TipoPassagem("Econômica");
 
-        AdquireVoo adquireVoo = new AdquireVoo(1, voo.getCodVoo());
+        EscalaVoo adquireVoo = new EscalaVoo(1, voo.getCodVoo());
 
         HospedagemCliente hospedagemCliente = new HospedagemCliente(1200.0, Date.valueOf("2001-01-01"), 
                                                                      Date.valueOf("2001-01-10"), 

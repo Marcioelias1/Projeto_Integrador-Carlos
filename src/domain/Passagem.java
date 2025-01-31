@@ -12,7 +12,7 @@ public class Passagem {
     private String localVolta;
     private TipoPassagem tipoPassagem;
     private AdquirePassagem adquirePassagem;
-    private List<AdquireVoo> adquireVoo;
+    private List<EscalaVoo> adquireVoo;
     
     public Passagem(Double preco, Date dataIda, Date dataVolta, String localIda, String localVolta,
             TipoPassagem tipoPassagem, AdquirePassagem adquirePassagem) {
@@ -96,11 +96,11 @@ public class Passagem {
         this.adquirePassagem = adquirePassagem;
     }
 
-    public List<AdquireVoo> getAdquireVoo() {
+    public List<EscalaVoo> getAdquireVoo() {
         return adquireVoo;
     }
 
-    public void setAdquireVoo(List<AdquireVoo> adquireVoo) {
+    public void setAdquireVoo(List<EscalaVoo> adquireVoo) {
         this.adquireVoo = adquireVoo;
     }
 

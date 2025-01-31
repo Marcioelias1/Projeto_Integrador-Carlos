@@ -12,7 +12,7 @@ public class Voo {
     private String localEmbarque;
     private String localDesembarque;
     private Cidade cidade;
-    private List<AdquireVoo> adquirevoo;
+    private List<EscalaVoo> adquirevoo;
     
     public Voo(Integer numeroVoo, Integer numeroAssento, LocalDateTime dataHoraEmbarque, LocalDateTime dataHoraDesembarque,
             String localEmbarque, String localDesembarque, Cidade cidade) {
@@ -97,11 +97,11 @@ public class Voo {
         this.cidade = cidade;
     }
 
-    public List<AdquireVoo> getAdquirevoo() {
+    public List<EscalaVoo> getAdquirevoo() {
         return adquirevoo;
     }
 
-    public void setAdquirevoo(List<AdquireVoo> adquirevoo) {
+    public void setAdquirevoo(List<EscalaVoo> adquirevoo) {
         this.adquirevoo = adquirevoo;
     }
 
