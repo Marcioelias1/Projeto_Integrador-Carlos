@@ -1,9 +1,9 @@
 package domain;
+
 import java.sql.Time;
-import java.util.List;
 
 public class Hotel {
-    
+
     private Integer codHotel;
     private String endereco;
     private String nomeHotel;
@@ -12,10 +12,9 @@ public class Hotel {
     private Time checkOut;
     private String descricaoGeral;
     private Cidade cidade;
-    private List<Hospedagem> hospedagem;
-    
-    public Hotel(String endereco, String nomeHotel, String classificacaoHotel, Time checkIn, Time checkOut,
-            String descricaoGeral, Cidade cidade) {
+
+    public Hotel(Integer codHotel, String endereco, String nomeHotel, String classificacaoHotel, Time checkIn, Time checkOut, String descricaoGeral, Cidade cidade) {
+        this.codHotel = codHotel;
         this.endereco = endereco;
         this.nomeHotel = nomeHotel;
         this.classificacaoHotel = classificacaoHotel;
@@ -23,13 +22,6 @@ public class Hotel {
         this.checkOut = checkOut;
         this.descricaoGeral = descricaoGeral;
         this.cidade = cidade;
-    }
-
-    @Override
-    public String toString() {
-        return "Hotel [codHotel=" + codHotel + ", endereco=" + endereco + ", nomeHotel=" + nomeHotel
-                + ", classificacaoHotel=" + classificacaoHotel + ", checkIn=" + checkIn + ", checkOut=" + checkOut
-                + ", descricaoGeral=" + descricaoGeral + ", cidade=" + cidade + "]";
     }
 
     public Integer getCodHotel() {
@@ -86,7 +78,7 @@ public class Hotel {
 
     public void setDescricaoGeral(String descricaoGeral) {
         this.descricaoGeral = descricaoGeral;
-    }
+     }
 
     public Cidade getCidade() {
         return cidade;
@@ -96,14 +88,17 @@ public class Hotel {
         this.cidade = cidade;
     }
 
-    public List<Hospedagem> getHospedagem() {
-        return hospedagem;
+    @Override
+    public String toString() {
+        return "Hotel{" +
+               "codHotel=" + codHotel +
+               ", endereco='" + endereco + '\'' +
+               ", nomeHotel='" + nomeHotel + '\'' +
+               ", classificacaoHotel='" + classificacaoHotel + '\'' +
+               ", checkIn=" + checkIn +
+               ", checkOut=" + checkOut +
+               ", descricaoGeral='" + descricaoGeral + '\'' +
+               ", cidade=" + cidade +
+               '}';
     }
-
-    public void setHospedagem(List<Hospedagem> hospedagem) {
-        this.hospedagem = hospedagem;
-    }
-
-    
-
 }

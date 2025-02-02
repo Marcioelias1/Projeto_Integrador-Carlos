@@ -1,35 +1,29 @@
 package domain;
-import java.sql.Date;
-import java.util.List;
+
+import java.time.LocalDate;
 
 public class Passagem {
-    
+
     private Integer numBilhete;
     private Double preco;
-    private Date dataIda;
-    private Date dataVolta;
-    private String localIda;
-    private String localVolta;
-    private TipoPassagem tipoPassagem;
-    private AdquirePassagem adquirePassagem;
-    private List<EscalaVoo> adquireVoo;
-    
-    public Passagem(Double preco, Date dataIda, Date dataVolta, String localIda, String localVolta,
-            TipoPassagem tipoPassagem, AdquirePassagem adquirePassagem) {
+    private LocalDate dataCompra;
+    private LocalDate dataIda;
+    private LocalDate dataVolta;
+    private Cliente cliente;
+    private Cidade cidadeEmbarque;
+    private Cidade cidadeDesembarque;
+    private Integer pesoBagagem;
+
+    public Passagem(Integer numBilhete, Double preco, LocalDate dataCompra, LocalDate dataIda, LocalDate dataVolta, Cliente cliente, Cidade cidadeEmbarque, Cidade cidadeDesembarque, Integer pesoBagagem) {
+        this.numBilhete = numBilhete;
         this.preco = preco;
+        this.dataCompra = dataCompra;
         this.dataIda = dataIda;
         this.dataVolta = dataVolta;
-        this.localIda = localIda;
-        this.localVolta = localVolta;
-        this.tipoPassagem = tipoPassagem;
-        this.adquirePassagem = adquirePassagem;
-    }
-
-    @Override
-    public String toString() {
-        return "Passagem [numBilhete=" + numBilhete + ", preco=" + preco + ", dataIda=" + dataIda + ", dataVolta="
-                + dataVolta + ", localIda=" + localIda + ", localVolta=" + localVolta + ", tipoPassagem=" + tipoPassagem
-                + ", adquirePassagem=" + adquirePassagem + "]";
+        this.cliente = cliente;
+        this.cidadeEmbarque = cidadeEmbarque;
+        this.cidadeDesembarque = cidadeDesembarque;
+        this.pesoBagagem = pesoBagagem;
     }
 
     public Integer getNumBilhete() {
@@ -48,63 +42,74 @@ public class Passagem {
         this.preco = preco;
     }
 
-    public Date getDataIda() {
+    public LocalDate getDataCompra() {
+        return dataCompra;
+    }
+
+    public void setDataCompra(LocalDate dataCompra) {
+        this.dataCompra = dataCompra;
+    }
+
+    public LocalDate getDataIda() {
         return dataIda;
     }
 
-    public void setDataIda(Date dataIda) {
+    public void setDataIda(LocalDate dataIda) {
         this.dataIda = dataIda;
     }
 
-    public Date getDataVolta() {
+    public LocalDate getDataVolta() {
         return dataVolta;
     }
 
-    public void setDataVolta(Date dataVolta) {
+    public void setDataVolta(LocalDate dataVolta) {
         this.dataVolta = dataVolta;
     }
 
-    public String getLocalIda() {
-        return localIda;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setLocalIda(String localIda) {
-        this.localIda = localIda;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public String getLocalVolta() {
-        return localVolta;
+    public Cidade getCidadeEmbarque() {
+        return cidadeEmbarque;
     }
 
-    public void setLocalVolta(String localVolta) {
-        this.localVolta = localVolta;
+    public void setCidadeEmbarque(Cidade cidadeEmbarque) {
+        this.cidadeEmbarque = cidadeEmbarque;
     }
 
-    public TipoPassagem getTipoPassagem() {
-        return tipoPassagem;
+    public Cidade getCidadeDesembarque() {
+        return cidadeDesembarque;
     }
 
-    public void setTipoPassagem(TipoPassagem tipoPassagem) {
-        this.tipoPassagem = tipoPassagem;
+    public void setCidadeDesembarque(Cidade cidadeDesembarque) {
+        this.cidadeDesembarque = cidadeDesembarque;
     }
 
-    public AdquirePassagem getAdquirePassagem() {
-        return adquirePassagem;
+    public Integer getPesoBagagem() {
+        return pesoBagagem;
     }
 
-    public void setAdquirePassagem(AdquirePassagem adquirePassagem) {
-        this.adquirePassagem = adquirePassagem;
+    public void setPesoBagagem(Integer pesoBagagem) {
+        this.pesoBagagem = pesoBagagem;
     }
 
-    public List<EscalaVoo> getAdquireVoo() {
-        return adquireVoo;
+    @Override
+    public String toString() {
+        return "Passagem{" +
+               "numBilhete=" + numBilhete +
+               ", preco=" + preco +
+               ", dataCompra=" + dataCompra +
+               ", dataIda=" + dataIda +
+               ", dataVolta=" + dataVolta +
+               ", cliente=" + cliente +
+               ", cidadeEmbarque=" + cidadeEmbarque +
+               ", cidadeDesembarque=" + cidadeDesembarque +
+               ", pesoBagagem=" + pesoBagagem +
+               '}';
     }
-
-    public void setAdquireVoo(List<EscalaVoo> adquireVoo) {
-        this.adquireVoo = adquireVoo;
-    }
-
-    
-    
-
 }

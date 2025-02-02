@@ -1,35 +1,27 @@
 package domain;
-import java.sql.Date;
-import java.util.List;
+
+import java.util.Date;
 
 public class Cliente {
+
     private Integer codCliente;
     private String cpf;
     private String nome;
     private String endereco;
     private String telefone;
     private String email;
-    private Date dataNascimento;
+    private Date dataNasc;
     private String sexo;
-    private List <AdquirePassagem> adPassagens;
-    private List <Hospedagem> hospedagens;
 
-    public Cliente(String cpf, String nome, String endereco, String telefone, String email,
-            Date dataNascimento, String sexo) {
+    public Cliente(Integer codCliente, String cpf, String nome, String endereco, String telefone, String email, Date dataNasc, String sexo) {
+        this.codCliente = codCliente;
         this.cpf = cpf;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
-        this.dataNascimento = dataNascimento;
+        this.dataNasc = dataNasc;
         this.sexo = sexo;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente [codCliente=" + codCliente + ", cpf=" + cpf + ", nome=" + nome + ", endereco=" + endereco
-                + ", telefone=" + telefone + ", email=" + email + ", dataNascimento=" + dataNascimento + ", sexo="
-                + sexo + "]";
     }
 
     public Integer getCodCliente() {
@@ -80,12 +72,12 @@ public class Cliente {
         this.email = email;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public Date getDataNasc() {
+        return dataNasc;
     }
 
-    public void setdataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
     }
 
     public String getSexo() {
@@ -96,20 +88,22 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public List<AdquirePassagem> getAdPassagens() {
-        return adPassagens;
+    @Override
+    public String toString() {
+        return "Cliente{" +
+               "codCliente=" + codCliente +
+               ", cpf='" + cpf + '\'' +
+               ", nome='" + nome + '\'' +
+               ", endereco='" + endereco + '\'' +
+               ", telefone='" + telefone + '\'' +
+               ", email='" + email + '\'' +
+               ", dataNasc=" + dataNasc +
+               ", sexo=" + sexo +
+               '}';
     }
 
-    public void setAdPassagens(List<AdquirePassagem> adPassagens) {
-        this.adPassagens = adPassagens;
+    public Cliente getCidade() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getCidade'");
     }
-
-    public List<Hospedagem> getHospedagens() {
-        return hospedagens;
-    }
-
-    public void setHospedagens(List<Hospedagem> hospedagens) {
-        this.hospedagens = hospedagens;
-    }
-
 }

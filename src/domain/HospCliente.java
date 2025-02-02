@@ -1,18 +1,19 @@
 package domain;
-import java.sql.Date;
 
-public class HospedagemCliente {
-    
-    private Integer codHospedagemCliente;
-    private Double valorPago;
+import java.util.Date;
+
+public class HospCliente {
+
+    private Integer codClienteHospedagem;
+    private double valorPago;
     private Date dataInicio;
     private Date dataTermino;
     private Integer qtedDependentes;
     private Cliente cliente;
     private Hospedagem hospedagem;
-    
-    public HospedagemCliente(Double valorPago, Date dataInicio, Date dataTermino, Integer qtedDependentes,
-            Cliente cliente, Hospedagem hospedagem) {
+
+    public HospCliente(Integer codClienteHospedagem, double valorPago, Date dataInicio, Date dataTermino, Integer qtedDependentes, Cliente cliente, Hospedagem hospedagem) {
+        this.codClienteHospedagem = codClienteHospedagem;
         this.valorPago = valorPago;
         this.dataInicio = dataInicio;
         this.dataTermino = dataTermino;
@@ -21,26 +22,19 @@ public class HospedagemCliente {
         this.hospedagem = hospedagem;
     }
 
-    @Override
-    public String toString() {
-        return "HospedagemCliente [codHospedagemCliente=" + codHospedagemCliente + ", valorPago=" + valorPago
-                + ", dataInicio=" + dataInicio + ", dataTermino=" + dataTermino + ", qtedDependentes=" + qtedDependentes
-                + ", cliente=" + cliente + ", hospedagem=" + hospedagem + "]";
+    public Integer getCodClienteHospedagem() {
+        return codClienteHospedagem;
     }
 
-    public Integer getCodHospedagemCliente() {
-        return codHospedagemCliente;
+    public void setCodClienteHospedagem(Integer codClienteHospedagem) {
+        this.codClienteHospedagem = codClienteHospedagem;
     }
 
-    public void setCodHospedagemCliente(Integer codHospedagemCliente) {
-        this.codHospedagemCliente = codHospedagemCliente;
-    }
-
-    public Double getValorPago() {
+    public double getValorPago() {
         return valorPago;
     }
 
-    public void setValorPago(Double valorPago) {
+    public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
     }
 
@@ -83,9 +77,17 @@ public class HospedagemCliente {
     public void setHospedagem(Hospedagem hospedagem) {
         this.hospedagem = hospedagem;
     }
-    
-    
 
-    
-
+    @Override
+    public String toString() {
+        return "HospCliente{" +
+               "codClienteHospedagem=" + codClienteHospedagem +
+               ", valorPago=" + valorPago +
+               ", dataInicio=" + dataInicio +
+               ", dataTermino=" + dataTermino +
+               ", qtedDependentes=" + qtedDependentes +
+               ", cliente=" + cliente +
+               ", hospedagem=" + hospedagem +
+               '}';
+    }
 }

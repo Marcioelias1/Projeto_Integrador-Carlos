@@ -1,29 +1,22 @@
 package domain;
 
 public class PontosTuristicos {
-   
+    
     private Integer codPontoTuristico;
     private String endereco;
     private String nomePontoTuristico;
     private Integer classificacaoPontoTuristico;
-    private String horarioFuncionamento;
-    private Cidade cidade;
-    
-    public PontosTuristicos(String endereco, String nomePontoTuristico, Integer classificacaoPontoTuristico,
-            String horarioFuncionamento, Cidade cidade) {
+    private String horarioFuncinamento;
+    private Cidade codCidade;
+   
+
+    public PontosTuristicos(Integer codPontoTuristico, String endereco, String nomePontoTuristico, Integer classificacaoPontoTuristico, String horarioFuncinamento, Cidade codCidade) {
+        this.codPontoTuristico = codPontoTuristico;
         this.endereco = endereco;
         this.nomePontoTuristico = nomePontoTuristico;
         this.classificacaoPontoTuristico = classificacaoPontoTuristico;
-        this.horarioFuncionamento = horarioFuncionamento;
-        this.cidade = cidade;
-    }
-
-    @Override
-    public String toString() {
-        return "PontosTuristicos [codPontoTuristico=" + codPontoTuristico + ", endereco=" + endereco
-                + ", nomePontoTuristico=" + nomePontoTuristico + ", classificacaoPontoTuristico="
-                + classificacaoPontoTuristico + ", horarioFuncionamento=" + horarioFuncionamento + ", cidade=" + cidade
-                + "]";
+        this.horarioFuncinamento = horarioFuncinamento;
+        this.codCidade = codCidade;
     }
 
     public Integer getCodPontoTuristico() {
@@ -58,22 +51,31 @@ public class PontosTuristicos {
         this.classificacaoPontoTuristico = classificacaoPontoTuristico;
     }
 
-    public String getHorarioFuncionamento() {
-        return horarioFuncionamento;
+    public String getHorarioFuncinamento() {
+        return horarioFuncinamento;
     }
 
-    public void setHorarioFuncionamento(String horarioFuncionamento) {
-        this.horarioFuncionamento = horarioFuncionamento;
+    public void setHorarioFuncinamento(String horarioFuncinamento) {
+        this.horarioFuncinamento = horarioFuncinamento;
     }
 
-    public Cidade getCidade() {
-        return cidade;
+    public Cidade getCodCidade() {
+        return codCidade;
     }
 
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
+    public void setCodCidade(Cidade codCidade) {
+        this.codCidade = codCidade;
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "PontosTuristicos{" +
+               "codPontoTuristico=" + codPontoTuristico +
+               ", endereco='" + endereco + '\'' +
+               ", nomePontoTuristico='" + nomePontoTuristico + '\'' +
+               ", classificacaoPontoTuristico=" + classificacaoPontoTuristico +
+               ", horarioFuncinamento='" + horarioFuncinamento + '\'' +
+               ", codCidade=" + codCidade +
+               '}';
+    }
 }

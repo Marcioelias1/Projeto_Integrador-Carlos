@@ -1,36 +1,31 @@
 package domain;
+
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class Voo {
-    
     private Integer codVoo;
-    private Integer numeroVoo;
-    private Integer numeroAssento;
+    private String prefixoVoo;
+    private String companhiaAerea;
     private LocalDateTime dataHoraEmbarque;
     private LocalDateTime dataHoraDesembarque;
-    private String localEmbarque;
-    private String localDesembarque;
-    private Cidade cidade;
-    private List<EscalaVoo> adquirevoo;
-    
-    public Voo(Integer numeroVoo, Integer numeroAssento, LocalDateTime dataHoraEmbarque, LocalDateTime dataHoraDesembarque,
-            String localEmbarque, String localDesembarque, Cidade cidade) {
-        this.numeroVoo = numeroVoo;
-        this.numeroAssento = numeroAssento;
+    private String aviao;
+    private Integer cidadeEmbarque;
+    private Integer cidadeDesembarque;
+
+    public Voo(Integer codVoo, String prefixoVoo, String companhiaAerea, LocalDateTime dataHoraEmbarque, LocalDateTime dataHoraDesembarque, String aviao, Integer cidadeEmbarque, Integer cidadeDesembarque) {
+        this.codVoo = codVoo;
+        this.prefixoVoo = prefixoVoo;
+        this.companhiaAerea = companhiaAerea;
         this.dataHoraEmbarque = dataHoraEmbarque;
         this.dataHoraDesembarque = dataHoraDesembarque;
-        this.localEmbarque = localEmbarque;
-        this.localDesembarque = localDesembarque;
-        this.cidade = cidade;
+        this.aviao = aviao;
+        this.cidadeEmbarque = cidadeEmbarque;
+        this.cidadeDesembarque = cidadeDesembarque;
     }
 
-    @Override
-    public String toString() {
-        return "Voo [codVoo=" + codVoo + ", numeroVoo=" + numeroVoo + ", numeroAssento=" + numeroAssento
-                + ", dataHoraEmbarque=" + dataHoraEmbarque + ", dataHoraDesembarque=" + dataHoraDesembarque
-                + ", localEmbarque=" + localEmbarque + ", localDesembarque=" + localDesembarque + ", cidade=" + cidade
-                + "]";
+    public Voo(String string, String string2, LocalDateTime of, LocalDateTime of2, Integer codCidade,
+            Integer codCidade2, String string3) {
+        //TODO Auto-generated constructor stub
     }
 
     public Integer getCodVoo() {
@@ -41,20 +36,20 @@ public class Voo {
         this.codVoo = codVoo;
     }
 
-    public Integer getNumeroVoo() {
-        return numeroVoo;
+    public String getPrefixoVoo() {
+        return prefixoVoo;
     }
 
-    public void setNumeroVoo(Integer numeroVoo) {
-        this.numeroVoo = numeroVoo;
+    public void setPrefixoVoo(String prefixoVoo) {
+        this.prefixoVoo = prefixoVoo;
     }
 
-    public Integer getNumeroAssento() {
-        return numeroAssento;
+    public String getCompanhiaAerea() {
+        return companhiaAerea;
     }
 
-    public void setNumeroAssento(Integer numeroAssento) {
-        this.numeroAssento = numeroAssento;
+    public void setCompanhiaAerea(String companhiaAerea) {
+        this.companhiaAerea = companhiaAerea;
     }
 
     public LocalDateTime getDataHoraEmbarque() {
@@ -73,37 +68,41 @@ public class Voo {
         this.dataHoraDesembarque = dataHoraDesembarque;
     }
 
-    public String getLocalEmbarque() {
-        return localEmbarque;
+    public String getAviao() {
+        return aviao;
     }
 
-    public void setLocalEmbarque(String localEmbarque) {
-        this.localEmbarque = localEmbarque;
+    public void setAviao(String aviao) {
+        this.aviao = aviao;
     }
 
-    public String getLocalDesembarque() {
-        return localDesembarque;
+    public Integer getCidadeEmbarque() {
+        return cidadeEmbarque;
     }
 
-    public void setLocalDesembarque(String localDesembarque) {
-        this.localDesembarque = localDesembarque;
+    public void setCidadeEmbarque(Integer cidadeEmbarque) {
+        this.cidadeEmbarque = cidadeEmbarque;
     }
 
-    public Cidade getCidade() {
-        return cidade;
+    public Integer getCidadeDesembarque() {
+        return cidadeDesembarque;
     }
 
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
+    public void setCidadeDesembarque(Integer cidadeDesembarque) {
+        this.cidadeDesembarque = cidadeDesembarque;
     }
 
-    public List<EscalaVoo> getAdquirevoo() {
-        return adquirevoo;
+    @Override
+    public String toString() {
+        return "Voo{" +
+                "codVoo=" + codVoo +
+                ", prefixoVoo='" + prefixoVoo + '\'' +
+                ", companhiaAerea='" + companhiaAerea + '\'' +
+                ", dataHoraEmbarque=" + dataHoraEmbarque +
+                ", dataHoraDesembarque=" + dataHoraDesembarque +
+                ", aviao='" + aviao + '\'' +
+                ", cidadeEmbarque=" + cidadeEmbarque +
+                ", cidadeDesembarque=" + cidadeDesembarque +
+                '}';
     }
-
-    public void setAdquirevoo(List<EscalaVoo> adquirevoo) {
-        this.adquirevoo = adquirevoo;
-    }
-
-    
 }

@@ -1,30 +1,24 @@
 package domain;
 
-import java.util.List;
+import java.util.Objects;
 
 public class Hospedagem {
 
     private Integer codHospedagem;
-    private Integer estadia;
     private Integer numQuarto;
-    private Double precoQuarto;
+    private double precoQuarto;
+    private TipoHosp tipoHosp;
     private Hotel hotel;
-    private TipoHospedagem tipoHospedagem;
-    private List<HospedagemCliente> hospedagemCliente;
-    
-    public Hospedagem(Integer estadia, Integer numQuarto, Double precoQuarto, Hotel hotel,
-            TipoHospedagem tipoHospedagem) {
-        this.estadia = estadia;
-        this.numQuarto = numQuarto;
-        this.precoQuarto = precoQuarto;
-        this.hotel = hotel;
-        this.tipoHospedagem = tipoHospedagem;
+
+    public Hospedagem(int i, double d, int j, Integer integer) {
     }
 
-    @Override
-    public String toString() {
-        return "Hospedagem [codHospedagem=" + codHospedagem + ", estadia=" + estadia + ", numQuarto=" + numQuarto
-                + ", precoQuarto=" + precoQuarto + ", hotel=" + hotel + ", tipoHospedagem=" + tipoHospedagem + "]";
+    public Hospedagem(Integer codHospedagem, Integer numQuarto, double precoQuarto, TipoHosp tipoHosp, Hotel hotel) {
+        this.codHospedagem = codHospedagem;
+        this.numQuarto = numQuarto;
+        this.precoQuarto = precoQuarto;
+        this.tipoHosp = tipoHosp;
+        this.hotel = hotel;
     }
 
     public Integer getCodHospedagem() {
@@ -35,14 +29,6 @@ public class Hospedagem {
         this.codHospedagem = codHospedagem;
     }
 
-    public Integer getEstadia() {
-        return estadia;
-    }
-
-    public void setEstadia(Integer estadia) {
-        this.estadia = estadia;
-    }
-
     public Integer getNumQuarto() {
         return numQuarto;
     }
@@ -51,12 +37,20 @@ public class Hospedagem {
         this.numQuarto = numQuarto;
     }
 
-    public Double getPrecoQuarto() {
+    public double getPrecoQuarto() {
         return precoQuarto;
     }
 
-    public void setPrecoQuarto(Double precoQuarto) {
+    public void setPrecoQuarto(double precoQuarto) {
         this.precoQuarto = precoQuarto;
+    }
+
+    public TipoHosp getTipoHosp() {
+        return tipoHosp;
+    }
+
+    public void setTipoHosp(TipoHosp tipoHosp) {
+        this.tipoHosp = tipoHosp;
     }
 
     public Hotel getHotel() {
@@ -67,22 +61,27 @@ public class Hospedagem {
         this.hotel = hotel;
     }
 
-    public TipoHospedagem getTipoHospedagem() {
-        return tipoHospedagem;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hospedagem that = (Hospedagem) o;
+        return codHospedagem == that.codHospedagem && numQuarto == that.numQuarto && Double.compare(that.precoQuarto, precoQuarto) == 0 && Objects.equals(tipoHosp, that.tipoHosp) && Objects. equals(hotel, that.hotel);
     }
 
-    public void setTipoHospedagem(TipoHospedagem tipoHospedagem) {
-        this.tipoHospedagem = tipoHospedagem;
+    @Override
+    public int hashCode() {
+        return Objects.hash(codHospedagem, numQuarto, precoQuarto, tipoHosp, hotel);
     }
 
-    public List<HospedagemCliente> getHospedagemCliente() {
-        return hospedagemCliente;
+    @Override
+    public String toString() {
+        return "Hospedagem{" +
+               "codHospedagem=" + codHospedagem +
+               ", numQuarto=" + numQuarto +
+               ", precoQuarto=" + precoQuarto +
+               ", tipoHosp=" + tipoHosp +
+               ", hotel=" + hotel +
+               '}';
     }
-
-    public void setHospedagemCliente(List<HospedagemCliente> hospedagemCliente) {
-        this.hospedagemCliente = hospedagemCliente;
-    }
-
-    
-
 }

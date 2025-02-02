@@ -5,22 +5,22 @@ import domain.*;
 
 public class EscalaVooDao {
 
-    public void inserir(EscalaVoo adquireVoo) throws Exception {
-
-        String sql = "INSERT INTO TB_ADQUIRIRPASSAGEM(voo, adquireVoo) VALUES(?,?)";
+    public void inserir(EscalaVoo escalaVoo) throws Exception {
+        String sql = "INSERT INTO escala_voo (cod_voo, num_bilhete, numero_assento) VALUES (?, ?, ?)";
         Connection conexao = ConexaoMysql.getConexao();
         PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-        stmt.setInt(1, adquireVoo.getVoo().getCodVoo());
-        stmt.setInt(2, adquireVoo.getAdquireVoo().getCodAdquire());
+        stmt.setInt(1, escalaVoo.getCodVoo().getCodVoo());
+        stmt.setInt(2, escalaVoo.getNumBilhete().getNumBilhete());
+        stmt.setString(3, escalaVoo.getNumeroAssento());
 
         stmt.executeUpdate();
         ResultSet rs = stmt.getGeneratedKeys();
-
+    
         if (rs.next()) {
-            adquireVoo.setCodAdquire(rs.getInt(1));
+            escalaVoo.setCodEscala(rs.getInt(1));
         }
-        
+    
         stmt.close();
         conexao.close();
     }
